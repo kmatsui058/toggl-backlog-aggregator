@@ -328,9 +328,9 @@ class TogglStateModule extends VuexModule {
     for (let project in this.projects) {
       for (let index in this.projects[project]) {
         const id = this.projects[project][index]
-        console.log(id)
+        console.log({id})
           const res = await fetchBacklogStatusEachItem(project, id).catch(err=>{console.warn(err)});
-          console.log(res)
+          console.log({res})
           if(res) this.addBacklogResponse({ project, id, value: res });
       }
     }
